@@ -38,3 +38,49 @@ td {
     border-left-color: rgb(134, 134, 87);
     border-right-color: gray;
 }
+
+img {
+    width: 130px;
+    height: 100px;
+}
+
+div#imagens {
+    background-color: lightgray;
+    background-image: url('../images/bck.png');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+}
+
+.fonteVerdana {
+    font-family: Verdana;
+}
+
+div {
+    border: 1px solid black;
+    /*display: none;*/
+}
+
+a {
+    display: block;
+}
+
+a:visited {
+    color: blue;
+}
+
+a:active {
+    color: blue;
+}
+
+li {
+    list-style: none;
+    /*list-style-type: georgian;*/
+}
+
+li:nth-child(odd) {
+    background-color: lightgray;
+}
+
+li:nth-child(even) {
+    background-color: darkgray;
+}

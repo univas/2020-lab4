@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    border: 1px solid black;
+}
+
+div#header {
+    height: 50px;
+    background-color: blue;
+}
+
+div#menu {
+    width: 20%;
+    height: 250px;
+    background-color: green;
+    float: left;
+}
+
+div#content {
+    width: 70%;
+    height: 250px;
+    background-color: red;
+    float: right;
+    cursor: pointer;
+}
+
+div#footer {
+    height: 30px;
+    background-color: yellow;
+    clear: both;
+}
