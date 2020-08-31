@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin: 10px 0;
+}
+
+div#container {
+  width: 900px;
+  border: 1px solid black;
+  margin: 35px auto;
+  padding: 10px;
+}
+
+li {
+  display: inline-block;
+  width: 23.1%;
+  height: 17px;
+  background-color: blue;
+  text-align: center;
+  padding: 7px;
+}
+
+div#cover {
+  margin: 10px 0;
+}
+
+img {
+  max-width: 100%;
+}
