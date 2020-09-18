@@ -7,22 +7,58 @@ function start() {
   button.onclick = function() {
     let input = document.getElementById('inputName')
     console.log(input.value)
-
     input.value = 'arroz'
   }
 
-  let calcButton = document.getElementById('calc')
-  calcButton.onclick = function() {
-    let inputA = document.getElementById('numberA')
-    let inputB = document.getElementById('numberB')
-    let inputC = document.getElementById('numberC')
+  let somaButton = document.getElementById('calcSoma')
+  somaButton.onclick = function() {    
+    imprimeResultado(1)
+  }
 
-    //let valorInputA = parseInt(inputA.value, 10) //66.88 => 66
-    //let valorInputB = parseInt(inputB.value, 10)
-    let valorInputA = parseFloat(inputA.value) //66.88 => 66.88
-    let valorInputB = parseFloat(inputB.value)
+  let subButton = document.getElementById('calcSub')
+  subButton.onclick = function() {
+    imprimeResultado(2)
+  }
 
-    let soma = valorInputA + valorInputB
-    inputC.value = soma
+  let multButton = document.getElementById('calcMult')
+  multButton.onclick = function() {    
+    imprimeResultado(3)
+  }
+
+  let divButton = document.getElementById('calcDiv')
+  divButton.onclick = function() {
+    imprimeResultado(4)
+  }
+}
+
+function imprimeResultado(option) {
+  let inputC = document.getElementById('numberC')
+  inputC.value = executaCalculo(option)
+}
+
+function executaCalculo(option) {
+  let inputA = document.getElementById('numberA')
+  let inputB = document.getElementById('numberB')
+
+  if (inputA.value.trim() === '' || inputB.value.trim() === '') {
+    alert('Por favor, preencha todos os campos!')
+    return null
+  }
+
+  let valorInputA = parseFloat(inputA.value)
+  let valorInputB = parseFloat(inputB.value)
+
+  if (option === 1) {
+    return valorInputA + valorInputB
+  } else if (option === 2) {
+    return valorInputA - valorInputB
+  } else if (option === 3) {
+    return valorInputA * valorInputB
+  } else {
+    if (valorInputB === 0) {
+      alert('Não é possível dividir por zero!')
+      return 0      
+    }
+    return valorInputA / valorInputB
   }
 }
