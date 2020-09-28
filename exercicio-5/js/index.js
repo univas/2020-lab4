@@ -1,20 +1,14 @@
 let guestList = []
 
-start()
-
-function start() {
+const start = () => {
   const button = document.getElementById('btnAdd')
-  button.onclick = function() {
-    addButtonEventListener()  
-  }
+  button.onclick = addButtonEventListener
 
   const inputName = document.getElementById('guest')
-  inputName.onkeydown = function() {
-    hideRequiredFieldMessage()
-  }
+  inputName.onkeydown = hideRequiredFieldMessage
 }
 
-function addButtonEventListener() {
+const addButtonEventListener = () => {
   const input = document.getElementById('guest')
   if (isEmpty(input.value)) {
     showRequiredFieldMessage()
@@ -30,30 +24,28 @@ function addButtonEventListener() {
   }
 }
 
-function isEmpty(guestName) {
-  return guestName.trim() === ''
-}
+const isEmpty = guestName => guestName.trim() === ''
 
-function isNameInTheArray(guestName) {
-  return guestList.includes(guestName)
-}
+const isNameInTheArray = guestName => guestList.includes(guestName)
 
-function addNewGuest(guestName) {
+const addNewGuest = guestName => {
   guestList.push(guestName)
   console.log(guestList)
 }
 
-function clearAndFocus(input) {
+const clearAndFocus = input => {
   input.value = ''
   input.focus()
 }
 
-function showRequiredFieldMessage() {
+const showRequiredFieldMessage = () => {
   const p = document.getElementById('requiredFieldMessage')
   p.className = ''
 }
 
-function hideRequiredFieldMessage() {
+const hideRequiredFieldMessage = () => {
   const p = document.getElementById('requiredFieldMessage')
   p.className = 'hidden'
 }
+
+start()
