@@ -7,6 +7,11 @@ function start() {
   button.onclick = function() {
     addButtonEventListener()  
   }
+
+  const inputName = document.getElementById('guest')
+  inputName.onkeydown = function() {
+    hideRequiredFieldMessage()
+  }
 }
 
 function addButtonEventListener() {
