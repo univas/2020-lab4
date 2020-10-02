@@ -10,16 +10,19 @@ const start = () => {
 
 const addButtonEventListener = () => {
   const input = document.getElementById('guest')
-  if (isEmpty(input.value)) {
+  const guestName = input.value.trim()
+  
+  if (isEmpty(guestName)) {
     showRequiredFieldMessage()
 
-  } else if (isNameInTheArray(input.value)) {
+  } else if (isNameInTheArray(guestName)) {
     hideRequiredFieldMessage()
     alert('Este convidado já está na lista!')
   
   } else {
     hideRequiredFieldMessage()
-    addNewGuest(input.value)
+    addNewGuestInArray(guestName)
+    addNewGuestInUl2(guestName)
     clearAndFocus(input)
   }
 }
@@ -28,9 +31,8 @@ const isEmpty = guestName => guestName.trim() === ''
 
 const isNameInTheArray = guestName => guestList.includes(guestName)
 
-const addNewGuest = guestName => {
+const addNewGuestInArray = guestName => {
   guestList.push(guestName)
-  console.log(guestList)
 }
 
 const clearAndFocus = input => {
@@ -46,6 +48,19 @@ const showRequiredFieldMessage = () => {
 const hideRequiredFieldMessage = () => {
   const p = document.getElementById('requiredFieldMessage')
   p.className = 'hidden'
+}
+
+const addNewGuestInUl = guestName => {
+  const ul = document.getElementById('guestListElement')
+  let li = document.createElement('li')
+  let textNode = document.createTextNode(guestName)
+  li.appendChild(textNode)
+  ul.appendChild(li)
+}
+
+const addNewGuestInUl2 = guestName => {
+  const ul = document.getElementById('guestListElement')
+  ul.innerHTML += '<li>' + guestName + '</li>'
 }
 
 start()
