@@ -22,7 +22,7 @@ const addButtonEventListener = () => {
   } else {
     hideRequiredFieldMessage()
     addNewGuestInArray(guestName)
-    addNewGuestInUl2(guestName)
+    addNewGuestInUl(guestName)
     clearAndFocus(input)
   }
 }
@@ -54,13 +54,29 @@ const addNewGuestInUl = guestName => {
   const ul = document.getElementById('guestListElement')
   let li = document.createElement('li')
   let textNode = document.createTextNode(guestName)
+  let image = document.createElement('img')
+  image.src = 'images/delete-icon.png'
+  image.className = 'icon'
+  image.onclick = removeGuest
   li.appendChild(textNode)
+  li.appendChild(image)
   ul.appendChild(li)
 }
 
-const addNewGuestInUl2 = guestName => {
-  const ul = document.getElementById('guestListElement')
-  ul.innerHTML += '<li>' + guestName + '</li>'
+// const addNewGuestInUl2 = guestName => {
+//   const ul = document.getElementById('guestListElement')
+//   ul.innerHTML += '<li>' + guestName + '</li>'
+// }
+
+const removeGuest = event => {
+  let targetElement = event.target
+  let textNode = targetElement.previousSibling
+  let guestName = textNode.nodeValue
+  if (confirm('Deseja realmente deletar o convidado ' + guestName)) {
+    let li = targetElement.parentNode
+    let ul = li.parentNode
+    ul.removeChild(li)
+  }
 }
 
 start()
