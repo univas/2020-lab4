@@ -6,6 +6,9 @@ const start = () => {
 
   const inputName = document.getElementById('guest')
   inputName.onkeydown = hideRequiredFieldMessage
+
+  const guestForm = document.getElementById('guestForm')
+  guestForm.onsubmit = listenerFormSubmit
 }
 
 const addButtonEventListener = () => {
@@ -77,6 +80,11 @@ const removeGuest = event => {
     let ul = li.parentNode
     ul.removeChild(li)
   }
+}
+
+const listenerFormSubmit = event => {
+  event.preventDefault()
+  addButtonEventListener()
 }
 
 start()
