@@ -1,0 +1,36 @@
+div.content {
+    width: 500px;
+    border: 2px solid black;
+    margin: 35px auto;
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    background-color: lightgrey;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 10px auto;
+}
+
+th, td {
+    border: 1px solid black;
+}
+
+tr:nth-child(odd) {
+    background-color: rgba(158, 158, 158, 0.973);
+}
+
+tr.blue {
+    background-color: rgb(145, 145, 250);
+}
+
+form input {
+    margin-top: 5px;
+}
