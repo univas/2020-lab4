@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+div.content {
+  width: 600px;
+  height: 400px;
+  margin: 30px auto;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+h1 {
+  margin: 10px 0;
+  text-align: center;
+}
+
+h2 {
+  margin: 10px 0;
+}
+
+form div {
+  margin: 5px 0;
+}
+
+p {
+  float: right;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid black;
+}
